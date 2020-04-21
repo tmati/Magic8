@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Magic8</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="vastausbtn">VASTAUS</string>
+    <string name="titletext">KYSY KASIPALLOLTA!</string>
+    <string name="ingressText">Ravista puhelinta tai paina vastaus-painiketta!</string>
+</resources>

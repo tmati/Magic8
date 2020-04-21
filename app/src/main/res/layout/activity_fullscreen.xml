@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ballbg"
+
+    tools:context=".FullscreenActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:id="@+id/root"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ball"
+            android:layout_width="350dp"
+            android:layout_height="621dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kasi" />
+
+        <Button
+            android:id="@+id/vastausbtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="518dp"
+            android:layout_marginBottom="80dp"
+            android:padding="15dp"
+            android:text="@string/vastausbtn"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ball" />
+
+        <TextView
+            android:id="@+id/answerText"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="303dp"
+            android:layout_marginBottom="299dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:textColor="@color/pureblack"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/ball"
+            app:layout_constraintEnd_toEndOf="@+id/ball"
+            app:layout_constraintStart_toStartOf="@+id/ball"
+            app:layout_constraintTop_toTopOf="@+id/ball"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/kasiText"
+            android:layout_width="164dp"
+            android:layout_height="211dp"
+            android:layout_marginTop="325dp"
+            android:layout_marginBottom="299dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:text="8"
+            android:textColor="@color/pureblack"
+            android:textSize="190dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/ball"
+            app:layout_constraintEnd_toEndOf="@+id/ball"
+            app:layout_constraintStart_toStartOf="@+id/ball"
+            app:layout_constraintTop_toTopOf="@+id/ball"
+            app:layout_constraintVertical_bias="0.696"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/titletext"
+            android:textColor="@color/purewhite"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ingress"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="1075dp"
+            android:gravity="center"
+            android:text="@string/ingressText"
+            android:textColor="@color/purewhite"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
