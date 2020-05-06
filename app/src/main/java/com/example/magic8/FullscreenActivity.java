@@ -1,30 +1,21 @@
 package com.example.magic8;
 
-import android.animation.LayoutTransition;
 import android.annotation.SuppressLint;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
-
 import android.content.Context;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.TransactionTooLargeException;
 import android.transition.TransitionManager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,12 +46,10 @@ public class FullscreenActivity extends AppCompatActivity {
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
+
     private final Handler mHideHandler = new Handler();
     MagicDatabase db;
     View mContentView;
-
-
-
 
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -80,6 +69,7 @@ public class FullscreenActivity extends AppCompatActivity {
         }
     };
     private View mControlsView;
+
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {
@@ -91,6 +81,7 @@ public class FullscreenActivity extends AppCompatActivity {
             mControlsView.setVisibility(View.VISIBLE);
         }
     };
+
     private boolean mVisible;
 
     private final Runnable mHideRunnable = new Runnable() {
@@ -171,26 +162,9 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
 
-
         setContentView(R.layout.activity_fullscreen);
 
         mVisible = true;
-        //mControlsView = findViewById(R.id.fullscreen_content_controls);
-        //mContentView = findViewById(R.id.fullscreen_content);
-
-
-        // Set up the user interaction to manually show or hide the system UI.
-        /*mContentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toggle();
-            }
-        });*/
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
         Button answerbutton = findViewById(R.id.vastausbtn);
         answerbutton.setOnClickListener(new View.OnClickListener() {
@@ -203,6 +177,8 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
     }
+
+    //Action handle with animation.
 
     void handle() {
         TextView eight = findViewById(R.id.kasiText);
@@ -223,13 +199,11 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        // Add the following line to register the Session Manager Listener onResume
         mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        // Add the following line to unregister the Sensor Manager onPause
         mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
@@ -287,6 +261,8 @@ public class FullscreenActivity extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
+    //AsyncTask
 
     private class dbRunner extends AsyncTask<Void, Void, Answer> {
 

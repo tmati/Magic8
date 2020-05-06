@@ -39,7 +39,6 @@ public class ShakeDetector implements SensorEventListener {
             float gZ = z / SensorManager.GRAVITY_EARTH;
 
             double g = Math.sqrt(gX * gX + gY * gY + gZ * gZ);
-            //System.out.println(g);
 
             if (g > SHAKE_THRESHOLD_GRAVITY) {
                 final long now = System.currentTimeMillis();
